@@ -14,7 +14,7 @@ Solution: Dynamic Programming and cache the already evaluated results to avoid p
 Once we see that two input strings don’t produce a valid shuffle, we cache this information 
 (if they do produce a valid shuffle then we’re done and return True, so no need to cache). 
 '''
-
+# Complexity: O(NM)--N and M are the length of str1 and str2
 def isShuffle2(str1, str2, str3, cache=set()): 
   if (str1, str2) in cache: 
     return False   
