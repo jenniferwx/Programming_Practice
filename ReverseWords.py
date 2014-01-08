@@ -18,11 +18,11 @@ def reverseWords(text):
     while index<length: 
       if text[index] not in space: 
          wordStart=index 
-      while index<length and text[index] not in space: 
-          index+=1 
-      words.append(text[wordStart:index]) 
+         while index<length and text[index] not in space: 
+             index+=1 
+         words.append(text[wordStart:index]) 
       index+=1   
-      print " ".join(reversed(words)) 
+    print " ".join(reversed(words)) 
 
 
 # other solutions, which might be regarded as cheating ones
