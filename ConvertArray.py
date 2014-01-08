@@ -28,4 +28,10 @@ def convertArray(arr):
     while swapIndex<currentIndex: 
       swapIndex=getIndex(swapIndex, N) 
     arr[currentIndex], arr[swapIndex] = arr[swapIndex], arr[currentIndex]
-  
+
+'''
+Note: swap two number with constant space using XOR swap:
+X = X^Y
+Y = X^Y
+X = X^Y
+'''
