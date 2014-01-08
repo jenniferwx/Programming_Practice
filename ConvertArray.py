@@ -27,5 +27,5 @@ def convertArray(arr):
     swapIndex=getIndex(currentIndex, N) 
     while swapIndex<currentIndex: 
       swapIndex=getIndex(swapIndex, N) 
-      arr[currentIndex], arr[swapIndex] = arr[swapIndex], arr[currentIndex]
+    arr[currentIndex], arr[swapIndex] = arr[swapIndex], arr[currentIndex]
   
