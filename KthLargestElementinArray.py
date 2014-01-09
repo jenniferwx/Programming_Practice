@@ -4,7 +4,7 @@
 
 import random
 
-# Solution 1: Selection sort----average complexity: O(N), wrost complexity O(N^2)
+# Solution 1: Quick sort----average complexity: O(N), wrost complexity O(N^2)
 def partition1(arr, left, right, pivotIndex): 
   arr[right], arr[pivotIndex]=arr[pivotIndex], arr[right] 
   pivot=arr[right] 
