@@ -11,7 +11,7 @@ def getWords(text):
     return re.sub(r'[^a-z0-9]',' ',text.lower()).split() 
     
 def CreateIndex(text) :
-    index = col.defaultdic(list)
+    index = col.defaultdict(list)
     words = getWords(text)
     for pos, word in enumerate(words):
         index[word].append(pos)
