@@ -3,12 +3,13 @@ Given a text file and a word, find the positions that the word occurs in the fil
 the positions of many words in the same file.
 '''
 
-# Solution 1: 
+# Solution 1: construct hashtable O(N), O(1) for searching
 import collections as col
-import re
+import re  #Regular expression operations library
 
 def getWords(text): 
-    return re.sub(r'[^a-z0-9]',' ',text.lower()).split() 
+    return re.sub(r'[^a-z0-9]',' ',text.lower()).split()  
+    # convert to lower letters and replace non-alphanumeric letter to space, finally split on whitespace
     
 def CreateIndex(text) :
     index = col.defaultdict(list)
@@ -23,4 +24,9 @@ def GetIndex(index, word):
     else:
        return []
       
-        
+  
+
+# Better Solution: Trie        
+'''
+it's very useful to use a trie while performing storage and retrieval on text data
+'''
