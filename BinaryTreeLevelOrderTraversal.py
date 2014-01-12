@@ -13,14 +13,14 @@ def LevelOrderPrint(tree):
     nodes = collections.deque(tree)
     currentcount, nextcount = 1,0
     while(len(nodes)!=0):
-        currentnodes = nodes.popleft();
+        currentnode = nodes.popleft();
         currentcount -=1
-        print currentnodes.val
-        if currennodes.left:
-           nodes.append(currentnodes.left)
+        print currentnode.val
+        if currennode.left:
+           nodes.append(currentnode.left)
            nextcount +=1
-        if currentnodes.right:
-           nodes.append(currentnodes.right)
+        if currentnode.right:
+           nodes.append(currentnode.right)
            nextcount +=1
         if currentcount==0:
            print '\n'
