@@ -12,7 +12,7 @@ def LevelOrderPrint(tree):
        return
     nodes = collections.deque(tree)
     currentcount, nextcount = 1,0
-    while(len(nodes)!=0):
+    while(currentcount!=0):
         currentnode = nodes.popleft();
         currentcount -=1
         print currentnode.val
