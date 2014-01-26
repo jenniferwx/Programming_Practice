@@ -5,10 +5,10 @@ Find the element with even occurrences.
 def getEven1(arr): 
   counts=collections.defaultdict(int) 
   for num in arr: 
-    counts[num]+=1 
-    for num, count in counts.items(): 
+      counts[num]+=1 
+  for num, count in counts.items(): 
       if count%2==0: 
-        return num
+         return num
 
 # second solution: XOR (assume there is only one even number)
 def getEven2(arr): 
