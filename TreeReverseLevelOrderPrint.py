@@ -34,7 +34,7 @@ def ReverseLevelPrint(tree):
         i +=1   
 
     LastIDX = len(Nodes)
-    for count in LevelSize[i]:
+    for count in LevelSize:
         output = Nodes[LastIDX-count:LastIDX]
         print ' '.join(map(str, output.val)), '\n',
         LastIDX -= count
