@@ -31,8 +31,7 @@ lld cntMin(lld mid){
   lld cnt = 0;
   lld j = n-1;
   for(int i=0; i<m; i++){
-  //由于已排序，可直接利用上一次结果
-  while(j >= 0 && arr1[i] + arr2[j] > mid) j--;
+    while(j >= 0 && arr1[i] + arr2[j] > mid) j--;
   cnt += j+1;
   }
   return cnt;
@@ -57,7 +56,7 @@ int main()
 	  	mid = (low+high)/2;
   	  	lld cnt = cntMin(mid);
   	  	if(cnt >= k){
-    	  	ans = mid; //mid有可能是解
+    	  	ans = mid; 
 	  	high = mid-1;
 		}
 		else
