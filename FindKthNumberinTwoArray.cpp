@@ -39,27 +39,31 @@ lld cntMin(lld mid){
 }
 	 
 lld low,high,mid;
-int main() {
-freopen("in.txt", "r", stdin);
-while(scanf("%lld%lld%lld", &m,&n,&k) != EOF){
-  for(lld i=0; i<m; i++) scanf("%lld", &arr1[i]);
-  for(lld j=0; j<n; j++) scanf("%lld", &arr2[j]);
-  sort(arr1, arr1+m);
-  sort(arr2, arr2+n);
-  low  = arr1[0] + arr2[0];
-  high = arr1[m-1] + arr2[n-1];
-  lld ans;
+int main() 
+{
+	freopen("in.txt", "r", stdin);
+	while(scanf("%lld%lld%lld", &m,&n,&k) != EOF)
+	{
+	  for(lld i=0; i<m; i++) scanf("%lld", &arr1[i]);
+	  for(lld j=0; j<n; j++) scanf("%lld", &arr2[j]);
+	  sort(arr1, arr1+m);
+	  sort(arr2, arr2+n);
+	  low  = arr1[0] + arr2[0];
+	  high = arr1[m-1] + arr2[n-1];
+	  lld ans;
   
-  while(low <= high){
-  mid = (low+high)/2;
-  lld cnt = cntMin(mid);
-  if(cnt >= k){
-    ans = mid; //mid有可能是解
-    high = mid-1;
-  }else
-    low = mid+1;
-  }
-    printf("%lld\n",ans);
-}
-return 0;
+  	  while(low <= high)
+  	  {
+	  	mid = (low+high)/2;
+  	  	lld cnt = cntMin(mid);
+  	  	if(cnt >= k){
+    	  	ans = mid; //mid有可能是解
+	  	high = mid-1;
+		}
+		else
+		low = mid+1;
+	  }
+    	  printf("%lld\n",ans);
+    	}
+	return 0;
 }
