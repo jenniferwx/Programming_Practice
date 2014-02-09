@@ -15,6 +15,7 @@ like wise.
 #include <string>
 using namespace std;
 
+// Recursive method
 void convertstring(string str1,string str2,int start1,int start2,int len,vector<bool> &avail)
 {
     if(start2>=len)
@@ -26,7 +27,7 @@ void convertstring(string str1,string str2,int start1,int start2,int len,vector<
 		if(avail[i]==true) continue;
         if(ch1==ch2){
             cout<<str1<<endl;
-			avail[i]=true;
+	    avail[i]=true;
             convertstring(str1,str2,i+1,start2+1,len,avail);
         }
         else
@@ -34,14 +35,15 @@ void convertstring(string str1,string str2,int start1,int start2,int len,vector<
             int j = i+1;
             while(j<len)
             {
-				swap(str1[j],str1[j-1]);
-				j++;
-			}
+		swap(str1[j],str1[j-1]);
+		j++;
+            }
             convertstring(str1,str2,i,start2,len,avail);
         }
     }
 }
 
+// Iterative method
 void convert(string s1,string s2)
 {
         int i = 0;
@@ -68,13 +70,13 @@ int main()
     string str1="abcdef";
     string str2 = "bcdfae";
     int len = str1.size();
-	vector<bool> avail(len,false);
+    vector<bool> avail(len,false);
     cout<<"start:"<<str1<<endl;
     convertstring(str1,str2,0,0,len,avail);
-	cout<<"end:"<<str2<<endl;
-	cout<<endl<<endl;
-	cout<<"start:"<<str1<<endl;
-	convert(str1,str2);
+    cout<<"end:"<<str2<<endl;
+    cout<<endl<<endl;
+    cout<<"start:"<<str1<<endl;
+    convert(str1,str2);
     cout<<"end:"<<str2<<endl;
      
    return 0;
