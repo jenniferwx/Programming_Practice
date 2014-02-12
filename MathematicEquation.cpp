@@ -3,7 +3,7 @@ implement一个例如“3*4+5"的计算
 note: 
 1）以下code只适合数字在0-9之间的加减乘除运算
 2）公式中没有括号
-3）运用two stack
+3）运用two stacks
 */
 
 #include <iostream>
