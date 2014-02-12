@@ -20,22 +20,22 @@ int str2int(string str)
     int L = str.size();
 	for(int i=0;i<L;i++)
 	{
-		if(str[i]!=' '&&str[i]>='0'&&str[i]<='9')
-		res = res*10+(str[i]-'0');
+	  if(str[i]!=' '&&str[i]>='0'&&str[i]<='9')
+	  res = res*10+(str[i]-'0');
 	}
     return res;
 }
 
 string int2str(int num)
 {
-	string res="";
-	while(num>0)
-	{
-		char a =  (num%10)+'0';
-		res = a+res;
-		num=num/10;
-	}
-	return res;
+    string res="";
+    while(num>0)
+    {
+    	char a =  (num%10)+'0';
+    	res = a+res;
+    	num=num/10;
+    }
+ return res;
 }
 int calc(string equation)
 {
@@ -55,22 +55,22 @@ int calc(string equation)
         {            
             if(!mystack2.empty())
             {
-				string p = int2str(mystack2.top());
+		string p = int2str(mystack2.top());
                 mystack1.push(p);
                 mystack2.pop();
             }
             else
             {mystack1.push(prev);}
             
-			stringstream ss;
-			ss<<cur;
+	    stringstream ss;
+	    ss<<cur;
             mystack1.push(ss.str());
             if(i+1==L-1)
-			{
-				stringstream ss;
-				ss<<equation[i+1];
-				mystack1.push(ss.str());
-			}
+            {
+            	stringstream ss;
+            	ss<<equation[i+1];
+            	mystack1.push(ss.str());
+            }
         }
         else if(cur=='*')
         {
@@ -93,24 +93,27 @@ int calc(string equation)
             
             int p = mystack2.top();
             mystack2.pop();
-			stringstream ss;
-			ss<<equation[i+1];
+	    stringstream ss;
+	    ss<<equation[i+1];
             int num2 = str2int(ss.str());
             int result = p/num2;
             mystack2.push(result);    
         }
         i+=2;
     }
-	if(mystack1.empty()&&!mystack2.empty())
-		return mystack2.top();
+    
+    if(mystack1.empty()&&!mystack2.empty())
+    return mystack2.top();
+    
     if(!mystack2.empty())
     {
         mystack1.push(int2str(mystack2.top()));
         mystack2.pop();
     }
+    
     while(mystack1.size()!=1)
     {
-		result = 0;
+	result = 0;
         int N1 = str2int(mystack1.top());
         mystack1.pop();
         string oper = mystack1.top();
@@ -121,7 +124,7 @@ int calc(string equation)
         result +=N1+N2;
         else if(oper[0]=='-')
         result +=N2-N1;
-		mystack1.push(int2str(result));
+	mystack1.push(int2str(result));
     }
     return result;   
 }
