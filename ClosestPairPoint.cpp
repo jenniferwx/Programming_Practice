@@ -23,8 +23,7 @@ struct Point
 set<Point> res;
 bool isLess(const Point &A,const Point &B)
 {
-    return A.x<B.x; // for 2D data
- //   return A.y<B.y; // for 1D data
+    return A.x<B.x; 
 }
 
 double Distance(Point &A, Point &B)
