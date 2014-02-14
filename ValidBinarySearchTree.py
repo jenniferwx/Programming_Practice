@@ -23,10 +23,10 @@ def isBSTree2(tree,LastNode=NEG_INFINITY):
   if tree is None:
     return True
   if not isBSTree2(tree.left,LastNode):
-    return false
+    return False
   
   if tree.val<LastNode:
-    return false
+    return False
   
   lastNode = tree.val
   return isBSTree2(tree.right,LastNode)
