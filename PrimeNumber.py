@@ -9,7 +9,7 @@ def PrimeNumber(K):
     num=2
     while i<=K:
         r = int(math.sqrt(num))
-        for j in [m+2 for m in range(r)]:
+        for j in range(2,r+1): #[m+2 for m in range(r)]:
             if num%j==0:
              break;
         if j==r+1:
