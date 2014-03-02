@@ -37,7 +37,7 @@ void Print(int A[][4], int m, int n)
            }
            if(i+j==sum)
            {
-               cout<<A[i][j];
+               cout<<A[i][j]<<" ";
                i++;
                j=0;
                count++;
