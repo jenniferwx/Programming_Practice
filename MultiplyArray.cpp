@@ -28,6 +28,26 @@ vector<int> multiply(vector<int> A,int L)
     output[i] = left[i]*right[i];
     return output;
 }
+
+// Lower space complexity: O(N)
+vector<int> multiply2(vector<int> A,int L)
+{
+    vector<int> output(L,0);
+    int p = 1;
+    for(int i=0;i<L;i++)
+    {
+        output[i] = p;
+        p = p*A[i];
+    }
+    p=1;
+    for(int i=L-1;i>=0;i--)
+    {
+        output[i] = output[i]*p;
+        p = p*A[i];
+    }
+    return output;
+}
+
 int main()
 {
    int A[] = {2,3,1,4,5};
