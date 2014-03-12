@@ -38,14 +38,12 @@ void Distance(vector<int> L1, vector<int> L2, vector<int> &MinDist,vector<int> &
     for(int i=0;i<len;i++)
     {
         int D = BinarySearch(L1[i],L2);
-        cout<<L1[i]<<","<<D<<endl;
         MinDist[i] +=D;
         if(MinDist[i]<M)
         {
             result[0] = i;
             result[1] = MinDist[i];
             M = MinDist[i];
-            cout<<result[0]<<","<<result[1]<<endl;
         }
     }
 }
@@ -62,7 +60,6 @@ vector<int> FindRange2(vector<vector<int> > list, int M, int N)
     {
         int j = i-1;
         Distance(list[i],list[j],MinDist,result);
-        cout<<result[0]<<","<<result[1]<<endl;
     }
     return result;
 }
